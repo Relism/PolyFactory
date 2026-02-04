@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version "${loom_version}"
+    id 'fabric-loom'
     id 'maven-publish'
 }
 
@@ -45,7 +45,10 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation project(path: ":")
+    // Use namedElements to avoid requiring the root jar at configuration time.
+    // Depend on PolyFactory project outputs without Loom remapping.
+    compileOnly project(path: ":")
+    runtimeOnly project(path: ":")
 }
 
 processResources {

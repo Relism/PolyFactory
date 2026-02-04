@@ -7,6 +7,10 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+    plugins {
+        id 'fabric-loom' version providers.gradleProperty('loom_version').get()
+        id 'com.modrinth.minotaur' version '2.+'
+    }
 }
 
 include("addons:ores-compat")
