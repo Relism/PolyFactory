@@ -33,6 +33,15 @@ bin/
 run/
 src/main/generated/
 
+# addons (multi-project)
+addons/**/.gradle/
+addons/**/build/
+addons/**/out/
+addons/**/classes/
+addons/**/.idea/
+addons/**/run/
+addons/**/src/main/generated/
+
 # java
 
 hs_err_*.log
